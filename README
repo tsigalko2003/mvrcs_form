@@ -1,0 +1,6 @@
+automatical filling attendance form
+read student_id/first_name/last_name from config.ini, then detect the coresponding elments among the webpage, and filling the values 
+require
+1. Firefox GUI   
+2. geckodriver https://github.com/mozilla/geckodriver/releases
+3. selenium,configparser
