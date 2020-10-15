@@ -26,7 +26,7 @@ def exists(variable):
 
 
 config = ConfigParser()
-config.read('config.ini')
+config.read('/Users/songt09/work/mvrcs_form/config.ini')
 
 Student_ID = config.get('main', 'Student_ID')
 First_name = config.get('main', 'First_name')
@@ -39,7 +39,7 @@ driver.get(url)
 
 while not exists("elem_submit"):
     try:
-        elem_submit = driver.find_element_by_css_selector("[aria-label='Submit']")
+        elem_submit = driver.find_element_by_css_selector("[title='Submit']")
     except:
         print("bad, refresh")
         driver.refresh()
@@ -79,7 +79,7 @@ elem_confirm1 = driver.find_element_by_css_selector(
 elem_confirm2 = driver.find_element_by_css_selector(
     "[aria-label='REQUIRED: I (or the student) is available via email and/or phone during regular school hours']")
 
-elem_submit = driver.find_element_by_css_selector("[aria-label='Submit']")
+elem_submit = driver.find_element_by_css_selector("[title='Submit']")
 
 elem_date.send_keys(today_date)
 elem_id.send_keys(Student_ID)
@@ -94,5 +94,5 @@ elem_remote.click()
 elem_confirm1.click()
 elem_confirm2.click()
 
-#elem_submit.click()
+elem_submit.click()
 #driver.quit()
